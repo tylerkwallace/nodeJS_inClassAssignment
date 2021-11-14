@@ -2,7 +2,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 const ToDo = require('./models/todo.model');
-//let fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
 let app = express();
 app.set('view engine', 'ejs');
@@ -100,8 +100,15 @@ app.get('/zip', function (req, res) {
 });
 
 app.post('/zip', function (req, res) {
-    res.render('zip');
-    // res.render('zip', { tasks: tasks, completed: completed });
+    fetch('http://api.zippopotam.us')
+    .then(res => res.json())
+    .then(data => {
+        // set the response to your global variable here
+        console.log("First element in the array:");
+        console.log(json[0]);
+        // redirect to the /zip page
+    });
+
 });
 
 app.listen(3000, function(){

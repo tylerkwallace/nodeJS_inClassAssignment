@@ -4,40 +4,55 @@
     <title>
         To-do
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="/styles.css" rel="stylesheet">
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="nav justify-content-left">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/zip">Zip Codes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <h1>
-        My to-do list
+        My To-do list
     </h1>
     <form action="/addToDo" method="POST">
-        <input type="text" name="newtodo" placeholder="add new item">
-        <button type="submit">
+        <input type="text" name="newtodo" placeholder="add new item ">
+        <button type='submit'>
             Add To-Do
         </button>
         <h2>
             Current Tasks
         </h2>
-        <% for( var i=0; i< tasks.length; i++){ %>
+        <% for(var i=0; i< tasks.length; i++){ %>
             <li><input type="checkbox" name="check" value="<%= tasks[i]._id %>" />
                 <%= tasks[i].item %>
             </li>
-            <% } %>
+            <%} %>
+
                 <button formaction="/removeToDo" type="submit">
                     Remove
                 </button>
     </form>
-    <form action="/deleteToDo" method="POST">
+    <form action='/deleteToDo' method="POST">
         <h2>
             Completed Tasks
         </h2>
-        <% for( var i=0; i< completed.length; i++){ %>
-            <li><input type="checkbox" name="check" value="<%= completed[i]._id %>" />
+        <% for(var i=0; i< completed.length; i++){ %>
+            <li><input type="checkbox" name="delete" value="<%= completed[i]._id %>" />
                 <%= completed[i].item %>
             </li>
             <% } %>
-                <button formaction="/deleteToDo" type="submit">
+                <button formaction='/deleteToDo' type="submit">
                     Delete
                 </button>
     </form>
