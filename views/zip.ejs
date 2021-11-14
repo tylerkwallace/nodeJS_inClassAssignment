@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        To-do
+    </title>
+    <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>
+        Select a country and enter a zip code
+    </h1>
+    <form action="/zip" method="POST">
+        <label for="countries">Choose a Country:</label>
+        <select id="countries" name="cars">
+            <option value="andorra">Andorra</option>
+            <option value="argentina">Argentina</option>
+            <option value="australia">Australia</option>
+            <option value="austria">Austria</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="belgium">Belgium</option>
+            <option value="bulgaria">Bulgaria</option>
+            <option value="brazil">Brazil</option>
+            <option value="canada">Canada</option>
+            <option value="switzerland">Switzerland</option>
+        </select>
+        <input type="text" name="zip" id="zip" placeholder="add zipcode">
+        <button type="submit" onclick="validNum()">
+            Go
+        </button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        function validNum() {
+            let x = document.getElementById("zip").value;
+            let text;
+            if (isNaN(x)) {
+                text = "Please enter a number";
+            }
+            document.getElementById("message").innerHTML = text;
+        }
+    </script>
+
+</body>
+
+</html>
