@@ -7,6 +7,7 @@ const fetch = require('node-fetch');
 let app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 //connection to mongo
 const mongoDB = 'mongodb+srv://admin:admin@cluster0.1artz.mongodb.net/todo?retryWrites=true&w=majority'
