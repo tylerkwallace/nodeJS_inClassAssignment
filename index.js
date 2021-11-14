@@ -89,7 +89,7 @@ app.post('/deleteToDo', function(req, res){
                 }
             })
         }
-        res.redirect('/');
+        res.redirect('/')
     }
 });
 
