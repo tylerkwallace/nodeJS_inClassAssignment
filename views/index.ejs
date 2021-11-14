@@ -20,25 +20,25 @@
             Current Tasks
         </h2>
         <% for( var i=0; i< tasks.length; i++){ %>
-            <li><input type="checkbox" name="check" value="<%= tasks[i] %>" />
-                <%= tasks[i] %>
+            <li><input type="checkbox" name="check" value="<%= tasks[i]._id %>" />
+                <%= tasks[i].item %>
             </li>
             <% } %>
                 <button formaction="/removeToDo" type="submit">
                     Remove
                 </button>
     </form>
-    <form action="" method="POST">
+    <form action="/deleteToDo" method="POST">
         <h2>
             Completed Tasks
         </h2>
         <% for( var i=0; i< completed.length; i++){ %>
-            <li><input type="checkbox" name="check" value="<%= completed[i] %>" />
-                <%= completed[i] %>
+            <li><input type="checkbox" name="check" value="<%= completed[i]._id %>" />
+                <%= completed[i].item %>
             </li>
             <% } %>
                 <button formaction="/deleteToDo" type="submit">
-                    Remove
+                    Delete
                 </button>
     </form>
 </body>
