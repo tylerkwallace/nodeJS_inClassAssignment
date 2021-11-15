@@ -1,36 +1,60 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <title>
-        To-do
+        Zip Code
     </title>
-    <link href="/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>
-        Select a country and enter a zip code
-    </h1>
-    <form action="/zip" method="POST">
-        <label for="countries">Choose a Country:</label>
-        <select id="countries" name="cars">
-            <option value="andorra">Andorra</option>
-            <option value="argentina">Argentina</option>
-            <option value="australia">Australia</option>
-            <option value="austria">Austria</option>
-            <option value="bangladesh">Bangladesh</option>
-            <option value="belgium">Belgium</option>
-            <option value="bulgaria">Bulgaria</option>
-            <option value="brazil">Brazil</option>
-            <option value="canada">Canada</option>
-            <option value="switzerland">Switzerland</option>
-        </select>
-        <input type="text" name="zip" id="zip" placeholder="add zipcode">
-        <button type="submit" onclick="validNum()">
-            Go
-        </button>
-        <p id="message"></p>
-    </form>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="nav justify-content-left">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/zip">Zip Codes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="row">
+            <div class="col col-12">
+                <h1>
+                    Select a country and enter a zip code
+                </h1>
+                <form action="/zip" method="POST">
+                    <label for="countries">Choose a Country:</label>
+                    <select id="countries" name="cars">
+                        <option value="andorra">Andorra</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="australia">Australia</option>
+                        <option value="austria">Austria</option>
+                        <option value="bangladesh">Bangladesh</option>
+                        <option value="belgium">Belgium</option>
+                        <option value="bulgaria">Bulgaria</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="canada">Canada</option>
+                        <option value="switzerland">Switzerland</option>
+                    </select>
+                    <input type="text" name="zip" id="zip" placeholder="add zipcode">
+                    <button type="submit" onclick="validNum()">
+                        Go
+                    </button>
+                    <p id="message"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 
     <script>
         function validNum() {
