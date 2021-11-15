@@ -2,6 +2,23 @@
     border: 2px solid gold;
 }
 
+h1, h2, h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 h1{
     color: red;
+}
+
+li{
+    list-style: none;
+    padding: 3px;
+}
+
+button{
+    border-radius: 50px;
+    background-color: goldenrod;
+    color: white;
+    border: 0px solid white;
+    padding: 5px;
 }
